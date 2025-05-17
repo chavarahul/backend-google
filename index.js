@@ -32,10 +32,9 @@ app.use("/api/photos", authenticateToken, photoRoutes);
 app.get("/api/auth/user-id", authenticateToken, (req, res) => {
   res.json({ userId: req.user.userId, name: req.user.name });
 });
-app.get("/", async (res, req) => {
- return <h1>frfefe</h1>
-})
-
+app.get("/", (req, res) => {
+  res.send("<h1>Welcome to the API Test App Server</h1>");
+});
 const interfaces = os.networkInterfaces();
 const address = Object.values(interfaces)
   .flat()
