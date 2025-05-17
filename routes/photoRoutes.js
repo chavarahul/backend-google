@@ -5,7 +5,6 @@ const { uploadImage } = require("../lib/cloudinary");
 
 const prisma = new PrismaClient();
 
-// GET /api/photos/album/:albumId - Fetch photos for a specific album
 router.get("/album/:albumId", async (req, res) => {
   const userId = req.user.userId;
   const { albumId } = req.params;
@@ -26,7 +25,6 @@ router.get("/album/:albumId", async (req, res) => {
   }
 });
 
-// POST /api/photos/album/:albumId - Add photos to an album
 router.post("/album/:albumId", async (req, res) => {
   const userId = req.user.userId;
   const { albumId } = req.params;
@@ -69,7 +67,6 @@ router.post("/album/:albumId", async (req, res) => {
   }
 });
 
-// DELETE /api/photos/:photoId/album/:albumId - Delete a photo
 router.delete("/:photoId/album/:albumId", async (req, res) => {
   const userId = req.user.userId;
   const { photoId, albumId } = req.params;

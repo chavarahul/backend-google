@@ -6,7 +6,6 @@ const { v4: uuidv4 } = require("uuid");
 
 const prisma = new PrismaClient();
 
-// GET /api/albums - Fetch all albums for the authenticated user
 router.get("/", async (req, res) => {
   const userId = req.user.userId;
   try {
@@ -26,7 +25,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET /api/albums/:id - Fetch a specific album
 router.get("/:id", async (req, res) => {
   const userId = req.user.userId;
   const { id } = req.params;
@@ -50,7 +48,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// POST /api/albums - Create a new album
 router.post("/", async (req, res) => {
   const userId = req.user.userId;
   const { name, date } = req.body || {};
@@ -59,7 +56,6 @@ router.post("/", async (req, res) => {
   console.log("POST /api/albums - Request body:", req.body);
   console.log("POST /api/albums - Files:", req.files);
 
-  // Validate required fields
   if (!name || typeof name !== "string") {
     return res.status(400).json({ error: "Album name is required and must be a string" });
   }
@@ -90,7 +86,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// PUT /api/albums/:id - Update an existing album
 router.put("/:id", async (req, res) => {
   const userId = req.user.userId;
   const { id } = req.params;
@@ -100,7 +95,6 @@ router.put("/:id", async (req, res) => {
   console.log("PUT /api/albums/:id - Request body:", req.body);
   console.log("PUT /api/albums/:id - Files:", req.files);
 
-  // Validate required fields
   if (!name || typeof name !== "string") {
     return res.status(400).json({ error: "Album name is required and must be a string" });
   }
