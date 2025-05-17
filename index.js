@@ -1,19 +1,23 @@
+// server.js
 const express = require("express");
 const { PrismaClient } = require("@prisma/client");
 const cors = require("cors");
 const fileUpload = require("express-fileupload");
 const winston = require("winston");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+// Middleware & Routes
 const albumRoutes = require("./routes/albumRoutes");
 const profileRoutes = require("./routes/profileRoutes");
 const photoRoutes = require("./routes/photoRoutes");
 const authRoutes = require("./routes/authRoutes");
-const { uploadImage } = require("./lib/cloudinary");
 const authenticateToken = require("./middleware/protectRoute");
-
-require("dotenv").config();
 
 const prisma = new PrismaClient();
 
+// Winston Logger Setup
 const logger = winston.createLogger({
   level: "info",
   format: winston.format.combine(
@@ -27,6 +31,9 @@ const logger = winston.createLogger({
 });
 
 const app = express();
+const PORT = process.env.PORT || 4000;
+
+// Middleware
 app.use(express.json());
 app.use(cors({ origin: process.env.CORS_ORIGIN || "http://localhost:3000" }));
 app.use(fileUpload());
@@ -37,35 +44,36 @@ app.use("/api/albums", authenticateToken, albumRoutes);
 app.use("/api/profile", authenticateToken, profileRoutes);
 app.use("/api/photos", authenticateToken, photoRoutes);
 
+// Get User Info
 app.get("/api/auth/user-id", authenticateToken, (req, res) => {
   res.json({ userId: req.user.userId, name: req.user.name });
 });
 
+// Health Check
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to the API Test App Server</h1>");
 });
 
-// Endpoint for photo uploads from Electron
+// Upload Photo Endpoint
 app.post("/api/upload-photo", authenticateToken, async (req, res) => {
   const { albumId, imageUrl } = req.body;
   const userId = req.user.userId;
 
   if (!albumId || !imageUrl) {
-    logger.error("Missing albumId or imageUrl in /api/upload-photo", { albumId, imageUrl });
+    logger.error("Missing albumId or imageUrl", { albumId, imageUrl });
     return res.status(400).json({ error: "Album ID and image URL are required" });
   }
 
   try {
-    // Validate album ownership
     const album = await prisma.album.findFirst({
       where: { id: albumId, userId },
     });
+
     if (!album) {
-      logger.error("Album not found or not owned by user", { albumId, userId });
+      logger.error("Album not found or unauthorized", { albumId, userId });
       return res.status(404).json({ error: "Album not found" });
     }
 
-    // Save to database in a transaction
     await prisma.$transaction([
       prisma.photo.create({
         data: {
@@ -80,21 +88,22 @@ app.post("/api/upload-photo", authenticateToken, async (req, res) => {
       }),
     ]);
 
-    logger.info("Photo saved to album", { imageUrl, albumId });
+    logger.info("Photo uploaded", { imageUrl, albumId });
     res.status(201).json({ message: "Photo saved successfully" });
   } catch (error) {
-    logger.error("Failed to save photo", { error: error.message, albumId });
+    logger.error("Photo upload failed", { error: error.message });
     res.status(500).json({ error: "Failed to save photo" });
   }
 });
 
-const PORT = process.env.PORT || 4000;
+// Server Start
 app.listen(PORT, () => {
-  logger.info(`HTTP Server running on http://localhost:${PORT}`);
+  logger.info(`🚀 Server running at http://localhost:${PORT}`);
 });
 
+// Graceful Shutdown
 process.on("SIGTERM", async () => {
-  logger.info("Shutting down server...");
+  logger.info("Shutting down...");
   await prisma.$disconnect();
   process.exit(0);
 });
