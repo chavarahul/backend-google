@@ -34,7 +34,7 @@ const PORT = process.env.PORT || 4000;
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: ['*','file://'] }));
 app.use(fileUpload());
 
 // Routes
