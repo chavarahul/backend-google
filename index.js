@@ -14,7 +14,7 @@ const profileRoutes = require("./routes/profileRoutes");
 const photoRoutes = require("./routes/photoRoutes");
 const { uploadImage } = require("./lib/cloudinary");
 const authRoutes = require("./routes/authRoutes");
-const  authenticateToken  = require("./middleware/protectRoute");
+const authenticateToken = require("./middleware/protectRoute");
 const fileUpload = require("express-fileupload");
 
 const prisma = new PrismaClient();
@@ -22,7 +22,7 @@ require("dotenv").config();
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin : '*'}));
+app.use(cors({ origin: '*' }));
 app.use(fileUpload());
 
 app.use("/api/auth", authRoutes);
@@ -32,6 +32,9 @@ app.use("/api/photos", authenticateToken, photoRoutes);
 app.get("/api/auth/user-id", authenticateToken, (req, res) => {
   res.json({ userId: req.user.userId, name: req.user.name });
 });
+app.get("/", async (res, req) => {
+ return <h1>frfefe</h1>
+})
 
 const interfaces = os.networkInterfaces();
 const address = Object.values(interfaces)
@@ -73,8 +76,7 @@ ftpServer.on("login", ({ connection, username, password }, resolve, reject) => {
       `Expected password: "${user?.password}", Received: "${password}"`
     );
     console.log(
-      `Expected bytes: ${
-        user ? Buffer.from(user.password).toString("hex") : "none"
+      `Expected bytes: ${user ? Buffer.from(user.password).toString("hex") : "none"
       }`
     );
     reject(new Error("Invalid credentials"));
