@@ -10,7 +10,6 @@ dotenv.config();
 
 // Middleware & Routes
 const albumRoutes = require("./routes/albumRoutes");
-const profileRoutes = require("./routes/profileRoutes");
 const photoRoutes = require("./routes/photoRoutes");
 const authRoutes = require("./routes/authRoutes");
 const authenticateToken = require("./middleware/protectRoute");
@@ -41,7 +40,6 @@ app.use(fileUpload());
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/albums", authenticateToken, albumRoutes);
-app.use("/api/profile", authenticateToken, profileRoutes);
 app.use("/api/photos", authenticateToken, photoRoutes);
 
 // Get User Info
