@@ -1,4 +1,3 @@
-// server.js
 const express = require("express");
 const { PrismaClient } = require("@prisma/client");
 const cors = require("cors");
@@ -8,7 +7,6 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-// Middleware & Routes
 const albumRoutes = require("./routes/albumRoutes");
 const photoRoutes = require("./routes/photoRoutes");
 const authRoutes = require("./routes/authRoutes");
@@ -16,7 +14,6 @@ const authenticateToken = require("./middleware/protectRoute");
 
 const prisma = new PrismaClient();
 
-// Winston Logger Setup
 const logger = winston.createLogger({
   level: "info",
   format: winston.format.combine(
@@ -32,9 +29,14 @@ const logger = winston.createLogger({
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// Middleware
+app.use(cors({
+  origin: ["http://localhost:3000","file://"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true 
+}));
+
 app.use(express.json());
-app.use(cors({ origin: ['*','file://'] }));
 app.use(fileUpload());
 
 // Routes
@@ -42,17 +44,14 @@ app.use("/api/auth", authRoutes);
 app.use("/api/albums", authenticateToken, albumRoutes);
 app.use("/api/photos", authenticateToken, photoRoutes);
 
-// Get User Info
 app.get("/api/auth/user-id", authenticateToken, (req, res) => {
   res.json({ userId: req.user.userId, name: req.user.name });
 });
 
-// Health Check
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to the API Test App Server</h1>");
 });
 
-// Upload Photo Endpoint
 app.post("/api/upload-photo", authenticateToken, async (req, res) => {
   const { albumId, imageUrl } = req.body;
   const userId = req.user.userId;

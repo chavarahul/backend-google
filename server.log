@@ -12,3 +12,44 @@
 {"level":"info","message":"HTTP Server running on http://localhost:4000","timestamp":"2025-05-17T19:26:53.245Z"}
 {"albumId":"88efd820-e5e0-4db9-be4e-a0e2d9757196","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747511159/albums/r7gdvfnhiqf4aerhcj3a.png","level":"info","message":"Photo saved to album","timestamp":"2025-05-17T19:46:01.622Z"}
 {"level":"info","message":"HTTP Server running on http://localhost:4000","timestamp":"2025-05-17T19:46:30.859Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-17T20:16:44.164Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T18:52:13.026Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T19:04:28.518Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T19:04:42.958Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T19:04:47.016Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T19:07:43.636Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T20:49:50.735Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T20:49:59.949Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T20:50:54.802Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T20:50:58.265Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T20:51:21.893Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T20:51:27.442Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T20:52:11.742Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T20:53:51.626Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-19T20:54:11.821Z"}
+{"albumId":"a55beb89-a2af-4b9e-a56e-f508ce000b4e","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747690387/albums/b0zndblhqen9ubt3xgcc.png","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T21:33:08.632Z"}
+{"albumId":"a55beb89-a2af-4b9e-a56e-f508ce000b4e","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747691615/albums/qoqtqfgnh75moidjcmh8.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T21:53:36.760Z"}
+{"albumId":"a55beb89-a2af-4b9e-a56e-f508ce000b4e","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747692318/albums/p2mjpohvzfizogy83yj8.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:05:19.637Z"}
+{"albumId":"a55beb89-a2af-4b9e-a56e-f508ce000b4e","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747692382/albums/kt7m099s2py50nvhahed.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:06:23.656Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747692400/albums/hxkl9afivhuvb2cth296.png","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:06:41.282Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747693180/albums/szgh0magrv6hdfn1frse.png","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:19:42.460Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747693284/albums/cjgp2x710q3n2pnc81hj.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:21:26.154Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747693300/albums/ilj5hy3bsuqlp4teqwqx.png","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:21:41.520Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747693790/albums/xnpbsfrix7heluhcrcaw.png","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:29:52.312Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747693802/albums/zzqkmjc0vblax3pdfuys.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:30:03.670Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747693804/albums/t4fwf4qfmhonjk6uenwn.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:30:05.569Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747693823/albums/nywifxqnwydxglfjum2r.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:30:25.358Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747694923/albums/gujiktksscind0hpg23x.png","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:48:45.391Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747694938/albums/qyui77ji7c2suyilfzku.png","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:48:59.495Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747694939/albums/ycgs5gf4kfiv9tx7qrfk.png","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:49:00.976Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747695396/albums/lhtdjo2hxntk5xfv70iy.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:56:37.400Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747695408/albums/ciewgkr3plmbnhzztdru.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:56:49.331Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747695412/albums/acqgibxqhb1bvjpsssav.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:56:55.445Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747695412/albums/iynsllfw5sjvlz8k4mav.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:56:55.682Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747695414/albums/dcmdgvutj1pakfxcknk6.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T22:56:56.304Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747696356/albums/vucrnsl8jewvozlvasck.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T23:12:38.822Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747696369/albums/u3pvbe3cbordkr1hnkac.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T23:12:51.257Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747696371/albums/d6ich3p3hrwfi6bnx8wl.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T23:12:52.976Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747696372/albums/wmapzwpkghgmr97avaiq.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T23:12:53.699Z"}
+{"albumId":"ea3d8947-95ed-4d56-9d42-6eb72c837a20","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747696373/albums/bzgr2104vetn9fdxugp0.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T23:12:55.543Z"}
+{"albumId":"a55beb89-a2af-4b9e-a56e-f508ce000b4e","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1747696638/albums/sjcqqjmcy1iqk4qesfrx.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-19T23:17:19.620Z"}

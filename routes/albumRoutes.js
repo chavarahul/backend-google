@@ -65,9 +65,10 @@ router.post("/", async (req, res) => {
 
   try {
     let coverImageUrl = null;
-    if (coverImage && coverImage.path) {
+    if (coverImage) {
       const result = await uploadImage(coverImage);
       coverImageUrl = result.secure_url;
+      console.log("Uploaded cover image URL:", coverImageUrl);
     }
 
     const album = await prisma.album.create({
