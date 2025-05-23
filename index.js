@@ -10,6 +10,7 @@ dotenv.config();
 const albumRoutes = require("./routes/albumRoutes");
 const photoRoutes = require("./routes/photoRoutes");
 const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRoutes")
 const authenticateToken = require("./middleware/protectRoute");
 
 const prisma = new PrismaClient();
@@ -39,10 +40,10 @@ app.use(cors({
 app.use(express.json());
 app.use(fileUpload());
 
-// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/albums", authenticateToken, albumRoutes);
 app.use("/api/photos", authenticateToken, photoRoutes);
+app.use("/api", authenticateToken,userRoutes)
 
 app.get("/api/auth/user-id", authenticateToken, (req, res) => {
   console.log(req.user.userId,req.user.name)
@@ -94,12 +95,10 @@ app.post("/api/upload-photo", authenticateToken, async (req, res) => {
   }
 });
 
-// Server Start
 app.listen(PORT, () => {
   logger.info(`🚀 Server running at http://localhost:${PORT}`);
 });
 
-// Graceful Shutdown
 process.on("SIGTERM", async () => {
   logger.info("Shutting down...");
   await prisma.$disconnect();
