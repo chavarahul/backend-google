@@ -45,6 +45,7 @@ app.use("/api/albums", authenticateToken, albumRoutes);
 app.use("/api/photos", authenticateToken, photoRoutes);
 
 app.get("/api/auth/user-id", authenticateToken, (req, res) => {
+  console.log(req.user.userId,req.user.name)
   res.json({ userId: req.user.userId, name: req.user.name });
 });
 
