@@ -19,14 +19,29 @@ model User {
   name           String?
   email          String?   @unique
   emailVerified  DateTime?
+  phone          String?
+  phoneVerified  DateTime?
   image          String?
+  password       String?
 
   accounts       Account[]
   sessions       Session[]
   albums         Album[]
+  otps           Otp[]
 
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
+}
+
+model Otp {
+  id         String   @id @default(uuid())
+  email      String
+  code       String
+  expiresAt  DateTime
+
+  createdAt  DateTime @default(now())
+
+  User User[]
 }
 
 model Album {

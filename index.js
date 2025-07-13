@@ -10,7 +10,7 @@ dotenv.config();
 const albumRoutes = require("./routes/albumRoutes");
 const photoRoutes = require("./routes/photoRoutes");
 const authRoutes = require("./routes/authRoutes");
-const userRoutes = require("./routes/userRoutes")
+const userRoutes = require("./routes/userRoutes");
 const authenticateToken = require("./middleware/protectRoute");
 
 const prisma = new PrismaClient();
@@ -27,11 +27,12 @@ const logger = winston.createLogger({
   ],
 });
 
+
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.use(cors({
-  origin: ["http://localhost:3000","file://"],
+  origin: ["http://localhost:3000", "file://"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true 
@@ -43,10 +44,9 @@ app.use(fileUpload());
 app.use("/api/auth", authRoutes);
 app.use("/api/albums", authenticateToken, albumRoutes);
 app.use("/api/photos", authenticateToken, photoRoutes);
-app.use("/api", authenticateToken,userRoutes)
+app.use("/api", authenticateToken, userRoutes);
 
 app.get("/api/auth/user-id", authenticateToken, (req, res) => {
-  console.log(req.user.userId,req.user.name)
   res.json({ userId: req.user.userId, name: req.user.name });
 });
 
@@ -104,3 +104,4 @@ process.on("SIGTERM", async () => {
   await prisma.$disconnect();
   process.exit(0);
 });
+
