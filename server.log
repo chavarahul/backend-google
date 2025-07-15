@@ -1,53 +1,8 @@
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:47:27.807Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:54:10.682Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:55:37.954Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:55:43.504Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:55:55.065Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:56:23.973Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:56:41.269Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:56:51.176Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:56:55.423Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:57:05.757Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:57:12.556Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:57:29.270Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:57:31.941Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T19:57:58.491Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T20:01:40.439Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T20:02:19.613Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T20:16:03.745Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T20:16:29.155Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T20:27:30.814Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T20:58:17.780Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T21:11:13.807Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T21:12:34.178Z"}
-{"albumId":"c5066fb5-ae2a-4503-b5ed-74fc17e0cdd5","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1748036432/albums/camera_bf0d13d2-adf7-4693-b9b3-6fdd03cd7d7b.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-23T21:40:32.514Z"}
-{"albumId":"c5066fb5-ae2a-4503-b5ed-74fc17e0cdd5","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1748036444/albums/camera_fb4362ba-66e7-410e-b1f9-0f4a4a35e2c3.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-23T21:40:44.534Z"}
-{"albumId":"c5066fb5-ae2a-4503-b5ed-74fc17e0cdd5","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1748036446/albums/camera_124b8c6d-5530-4796-96ed-3e61e881f59d.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-23T21:40:47.168Z"}
-{"albumId":"c5066fb5-ae2a-4503-b5ed-74fc17e0cdd5","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1748036449/albums/camera_71d2bdab-9788-47f0-936c-a8dc3e42c39a.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-23T21:40:49.784Z"}
-{"albumId":"c5066fb5-ae2a-4503-b5ed-74fc17e0cdd5","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1748036544/albums/camera_fc69d426-9d13-4719-bb73-1a38f92a357d.png","level":"info","message":"Photo uploaded","timestamp":"2025-05-23T21:42:30.385Z"}
-{"albumId":"c5066fb5-ae2a-4503-b5ed-74fc17e0cdd5","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1748037289/albums/camera_25cc2855-e61d-46d9-b5a5-b7de2fd82c14.png","level":"info","message":"Photo uploaded","timestamp":"2025-05-23T21:54:50.342Z"}
-{"albumId":"c5066fb5-ae2a-4503-b5ed-74fc17e0cdd5","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1748037612/albums/camera_abe5c463-fe9f-4f6c-b9e9-2d01859bcc9b.png","level":"info","message":"Photo uploaded","timestamp":"2025-05-23T22:00:13.046Z"}
-{"albumId":"c5066fb5-ae2a-4503-b5ed-74fc17e0cdd5","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1748038424/albums/camera_6efe8944-3c02-44f5-a406-73f52911006e.jpg","level":"info","message":"Photo uploaded","timestamp":"2025-05-23T22:13:45.275Z"}
-{"albumId":"c5066fb5-ae2a-4503-b5ed-74fc17e0cdd5","imageUrl":"https://res.cloudinary.com/dxfujspwu/image/upload/v1748038967/albums/camera_c3d1689f-addc-42ca-9694-719e2ccb250c.png","level":"info","message":"Photo uploaded","timestamp":"2025-05-23T22:22:47.727Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T22:34:01.573Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-05-23T22:34:15.059Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-06-03T14:30:33.121Z"}
-{"albumId":"1849fb26-49ba-4175-9ecc-e6a1bd28cf46","imageUrl":"file://C:/Users/chava/OneDrive/Desktop/apjpro/EduTech/src/Sections/aiImage2.png","level":"info","message":"Photo uploaded","timestamp":"2025-06-03T14:40:44.038Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:26:18.596Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:30:27.135Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:30:34.421Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:33:23.658Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:41:13.018Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:41:46.367Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:41:58.640Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:42:05.888Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:44:50.396Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:45:03.556Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:45:30.953Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:50:52.711Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T16:51:10.243Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T18:34:26.324Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T18:36:28.457Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T18:38:17.281Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T18:38:20.389Z"}
-{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-12T18:38:22.910Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-14T18:05:24.660Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-14T18:07:00.171Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-14T18:14:49.534Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-14T18:32:00.695Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-14T18:44:44.079Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-14T18:44:51.174Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-14T18:48:14.927Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:4000","timestamp":"2025-07-14T18:49:01.346Z"}

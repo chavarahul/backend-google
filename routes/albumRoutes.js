@@ -1,8 +1,8 @@
+// Updated Express routes with Prisma, Cloudinary, Base64, and Local Path - Now respecting local ID and syncing with Electron
 const express = require("express");
 const router = express.Router();
 const { PrismaClient } = require("@prisma/client");
-const { uploadImage } = require("../lib/cloudinary");
-const { v4: uuidv4 } = require("uuid");
+const { uploadBase64Image } = require("../lib/cloudinary");
 
 const prisma = new PrismaClient();
 
@@ -13,18 +13,19 @@ router.get("/", async (req, res) => {
       where: { userId },
       include: { _count: { select: { photos: true } } },
     });
-    const formattedAlbums = albums.map((album) => ({
-      ...album,
-      photoCount: album._count.photos,
+    const formatted = albums.map((a) => ({
+      ...a,
+      photoCount: a._count.photos,
       _count: undefined,
     }));
-    res.json(formattedAlbums);
+    res.json(formatted);
   } catch (error) {
-    console.error("Error fetching albums:", error);
+    console.error("Fetch error:", error);
     res.status(500).json({ error: "Failed to fetch albums" });
   }
 });
 
+// GET album by ID
 router.get("/:id", async (req, res) => {
   const userId = req.user.userId;
   const { id } = req.params;
@@ -33,56 +34,50 @@ router.get("/:id", async (req, res) => {
       where: { id, userId },
       include: { _count: { select: { photos: true } } },
     });
-    if (!album) {
-      return res.status(404).json({ error: "Album not found" });
-    }
-    const formattedAlbum = {
-      ...album,
-      photoCount: album._count.photos,
-      _count: undefined,
-    };
-    res.json(formattedAlbum);
-  } catch (error) {
-    console.error("Error fetching album:", error);
+    if (!album) return res.status(404).json({ error: "Album not found" });
+    res.json({ ...album, photoCount: album._count.photos });
+  } catch (err) {
+    console.error("Album fetch error:", err);
     res.status(500).json({ error: "Failed to fetch album" });
   }
 });
 
 router.post("/", async (req, res) => {
   const userId = req.user.userId;
-  const { name, date } = req.body || {};
-  const coverImage = req.files && req.files.coverImage;
+  const { id, name, date, imageBase64, localImagePath } = req.body;
 
-  console.log("POST /api/albums - Request body:", req.body);
-  console.log("POST /api/albums - Files:", req.files);
+  console.log("Creating album with data:", { id, name, date, imageBase64, localImagePath });
 
-  if (!name || typeof name !== "string") {
-    return res.status(400).json({ error: "Album name is required and must be a string" });
+  if (!id || typeof id !== "string") {
+    return res.status(400).json({ error: "ID is required from local" });
   }
-  if (!date || isNaN(new Date(date).getTime())) {
+  if (!name || typeof name !== "string") {
+    return res.status(400).json({ error: "Name is required" });
+  }
+  if (!date || isNaN(new Date(date))) {
     return res.status(400).json({ error: "Valid date is required" });
   }
 
   try {
     let coverImageUrl = null;
-    if (coverImage) {
-      const result = await uploadImage(coverImage);
+    if (imageBase64) {
+      const result = await uploadBase64Image(imageBase64);
       coverImageUrl = result.secure_url;
-      console.log("Uploaded cover image URL:", coverImageUrl);
     }
 
     const album = await prisma.album.create({
       data: {
-        id: uuidv4(),
+        id,
         name,
         date: new Date(date),
         userId,
         coverImage: coverImageUrl,
+        localImagePath,
       },
     });
     res.status(201).json(album);
-  } catch (error) {
-    console.error("Error creating album:", error);
+  } catch (err) {
+    console.error("Create error:", err);
     res.status(500).json({ error: "Failed to create album" });
   }
 });
@@ -90,66 +85,55 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   const userId = req.user.userId;
   const { id } = req.params;
-  const { name, date } = req.body || {};
-  const coverImage = req.files && req.files.coverImage;
-
-  console.log("PUT /api/albums/:id - Request body:", req.body);
-  console.log("PUT /api/albums/:id - Files:", req.files);
+  const { name, date, imageBase64, localImagePath } = req.body;
 
   if (!name || typeof name !== "string") {
-    return res.status(400).json({ error: "Album name is required and must be a string" });
+    return res.status(400).json({ error: "Name is required" });
   }
-  if (!date || isNaN(new Date(date).getTime())) {
+  if (!date || isNaN(new Date(date))) {
     return res.status(400).json({ error: "Valid date is required" });
   }
 
   try {
-    const album = await prisma.album.findFirst({
-      where: { id, userId },
-    });
-    if (!album) {
-      return res.status(404).json({ error: "Album not found" });
-    }
+    const album = await prisma.album.findFirst({ where: { id, userId } });
+    if (!album) return res.status(404).json({ error: "Album not found" });
 
     let coverImageUrl = album.coverImage;
-    if (coverImage && coverImage.path) {
-      const result = await uploadImage(coverImage);
+    if (imageBase64) {
+      const result = await uploadBase64Image(imageBase64);
       coverImageUrl = result.secure_url;
     }
 
-    const updatedAlbum = await prisma.album.update({
+    const updated = await prisma.album.update({
       where: { id },
       data: {
         name,
         date: new Date(date),
         coverImage: coverImageUrl,
+        localImagePath,
       },
     });
-    res.json(updatedAlbum);
-  } catch (error) {
-    console.error("Error updating album:", error);
+    res.json(updated);
+  } catch (err) {
+    console.error("Update error:", err);
     res.status(500).json({ error: "Failed to update album" });
   }
 });
 
-// DELETE /api/albums/:id - Delete an album
+// DELETE album
 router.delete("/:id", async (req, res) => {
   const userId = req.user.userId;
   const { id } = req.params;
-
   try {
-    const album = await prisma.album.findFirst({
-      where: { id, userId },
-    });
-    if (!album) {
-      return res.status(404).json({ error: "Album not found" });
-    }
+    const album = await prisma.album.findFirst({ where: { id, userId } });
+    if (!album) return res.status(404).json({ error: "Album not found" });
 
     await prisma.photo.deleteMany({ where: { albumId: id } });
     await prisma.album.delete({ where: { id } });
-    res.json({ message: "Album deleted successfully" });
-  } catch (error) {
-    console.error("Error deleting album:", error);
+
+    res.json({ message: "Album deleted" });
+  } catch (err) {
+    console.error("Delete error:", err);
     res.status(500).json({ error: "Failed to delete album" });
   }
 });
